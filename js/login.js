@@ -33,17 +33,27 @@ addEventListener("click", (evento)=>{
         // console.log(evento.target);
         if(evento.target.id == "btnSubmit"){
 
-            listaDeUsuarios.forEach((usuario)=>{});
+        try{
+            listaDeUsuarios.forEach((usuario)=>{
         
                 if(userInput.value == usuario.nomeUsuario && passInput.value ==
                 usuario.senhaUsuario){
-                    console.log("USUÁRIO VALIDADO!");
-
-                }else{
-                    console.log("USUÁRIO OU SENHA INCORRETOS!");
+                    throw "USUÁRIO VALIDADO!";
                 }
+                   
             
+            });
+            
+            throw "USUÁRIO OU SENHA INCORRETOS!";
+
+    }catch(msg){
+        if(msg == "USUÁRIO VALIDADO"){
+            console.log("USUARIO VALIDADO!")
+        }else{
+            console.log("USUÁRIO OU SENHA INCORRETOS!");
         }
-        
+
+    }    
+     0,                                                                                                                                                                                                                                                                                                                                                                                                    }    
 });
 
